@@ -1,11 +1,3 @@
-# Problem Statement
-
-### Assignment:
-
-  Your new target is:
-  - 99.4% (this must be consistently shown in your last few epochs, and not a one-time achievement)
-  - Less than or equal to 15 Epochs
-  - Less than 10000 Parameters (additional points for doing this in less than 8000 pts)
 
 Model Comparision
 ----------------
