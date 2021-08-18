@@ -1,3 +1,6 @@
+# How to Design A Convolutional Neural Network Step-By-Step Procedure Using MNIST Digit Recognizer
+
+There are various steps included while designing a neural network plus various regularization techniques, i have seen people confused with what technique to use, where to use it and when. How many parameters should be there a network??.. Should you apply LR schedulers or where and when to add dropout and much more. The thing is all this depends on the dataset you dont go there and apply every thing in the toolkit at once. This repo contains step by step approach on **Design A Convolutional Neural Network using MNIST Digit Regognizer** dataset
 
 Model Comparision
 ----------------
