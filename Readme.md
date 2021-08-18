@@ -13,7 +13,7 @@ Model Comparision
 
 # Best Model Architecture
   
-![alt](Images/SESS5.png)
+![alt](Images/arch.png)
 
 ```
 ----------------------------------------------------------------
