@@ -12,7 +12,6 @@ Model Comparision
 
 
 # Best Model Architecture
-  - [to notebbok](https://github.com/vivek-a81/EVA6/blob/main/Session5/Model4_best_modelLR.ipynb)
   
 ![alt](Images/SESS5.png)
 
