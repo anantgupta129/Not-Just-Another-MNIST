@@ -2,21 +2,117 @@
 
 There are various steps included while designing a neural network plus various regularization techniques, i have seen people confused with what technique to use, where to use it and when. How many parameters should be there a network??.. Should you apply LR schedulers or where and when to add dropout and much more. The thing is all this depends on the dataset you dont go there and apply every thing in the toolkit at once. This repo contains step by step approach on **Design A Convolutional Neural Network using MNIST Digit Regognizer** dataset
 
-Model Comparision
+Model Comparision Table
 ----------------
 
-| Experiments | Parameters | Best Training Acc | Best Training Loss | Best Test Acc  | Best Test Loss  | Analysis |
-| :-------: | :---------: |:-----------: | :------: | :-------: | :-------: | :-------: |
-| [Model4_best_modelLR](https://github.com/vivek-a81/EVA6/blob/main/Session5/Model4_best_modelLR.ipynb) |  7.4k | 99.24 | 0.00553 |99.56% | 0.0168 |  • We tried different learning rate schedulers like ReduceLRPlatue which did not work because on platue decreses the learning rate when loss is incresing in a particular epochs but this did not happen in out problem. StepLR also did not work because it is hard to predict at which point the learning rate should be reduced <br> • So, we have used OneCycleLR which updates learning rate throughout the epoch with every single batch is passed (Learning rate is updated in a particular range) |
-| [Model3_augmentation](https://github.com/vivek-a81/EVA6/blob/main/Session5/Model3_augmentation.ipynb) |  7.4k |  99.00 | 0.01188 | 99.34 | 0.0213 | There were some examples in testing data on which model was not able to give correct prediction, adding data augmentation helps to modifies the training samples, which increse the performance of model while training, we can see it as the jump in training accuracy and also the model is able to predict the testing data better compare with last model. |
-| [Model2_bn_dropout](https://github.com/vivek-a81/EVA6/blob/main/Session5/Model2_bn_dropout.ipynb) | 7.4k | 98.58 | 0.01337 | 99.28 | 0.0230 | The model is pushed future by applying the batchnormalization. Dropout made the training harder by dropping the neurons |
-| [Model1_Basic_Skeleton](https://github.com/vivek-a81/EVA6/blob/main/Session5/Model1_Basic_Skeleton.ipynb) | 7.3k | 98.58 | 0.01337 | 98.66 | 0.0464 | Design model architeture of less than 8000 parameters The accuracy was very well with such less number of parameters and the training accuracy batch normalization and dropout can push the performance |
-
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;font-family:Arial, sans-serif;font-size:13px; overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;font-family:Arial, sans-serif;font-size:14px; font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-baqh{text-align:center;vertical-align:top}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-amwm{font-weight:bold;border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-qgz6{border-color:inherit;font-family:"Times New Roman", Times, serif !important;;text-align:left;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+	<colgroup>
+		<col span="1" style="width: 18%;">
+		<col span="1" style="width: 20%;">
+		<col span="1" style="width: 62%;">
+	</colgroup>
+  <thead>
+    <tr>
+			<th class="tg-amwm">Experiments</th>
+			<th class="tg-amwm">Model Stats</th>
+      <th class="tg-amwm">Analysis</th>
+		</tr>
+	</thead>
+	<tboby>
+		<tr>
+			<td class="tg-0pky"><a herf="https://github.com/vivek-a81/EVA6/blob/main/Session5/Model1_Basic_Skeleton.ipynb">Model 1: The Basic Skeleton</a></td>
+			<td class="tg-0pky">
+				<ul>
+					<li> Total Parameters : 7.3k </li>
+					<li> Training Acc : 98.58% </li>
+					<li> Training Loss : 0.01337 </li>
+					<li> Test Acc : 98.66% </li>
+					<li> Test Loss : 0.0464 </li>
+				</ul>
+			</td>
+			<td>
+				<ul>
+					<li>Designed model architeture of less than 8000 parameters The accuracy was very well with such less number of parameters</li>
+					<li>The training accuracy batch normalization and dropout can push the performance</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td class="tg-0pky"><a herf="https://github.com/vivek-a81/EVA6/blob/main/Session5/Model2_bn_dropout.ipynb">Model 2: Added BN & Dropout</a></td>
+			<td class="tg-0pky">
+				<ul>
+					<li> Total Parameters : 7.4k </li>
+					<li> Training Acc : 98.58% </li>
+					<li> Training Loss : 0.01337 </li>
+					<li> Test Acc : 99.28% </li>
+					<li> Test Loss : 0.0230 </li>
+				</ul>
+			</td>
+			<td>
+				<ul>
+					<li>The model is pushed future by applying the batchnormalization.</li>
+					<li>Dropout made the training harder by dropping the neurons, by this we can see results in testing accuracy</li>
+					<li>Now Lets lets try to reduce the gap between training and test accuracy by adding image agumentation</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td class="tg-0pky"><a herf="https://github.com/vivek-a81/EVA6/blob/main/Session5/Model2_bn_dropout.ipynb">Model 3: With Data Augmentation</a></td>
+			<td class="tg-0pky">
+				<ul>
+					<li> Total Parameters : 7.4k </li>
+					<li> Training Acc : 99.00% </li>
+					<li> Training Loss : 0.01188 </li>
+					<li> Test Acc : 99.34% </li>
+					<li> Test Loss : 0.0213 </li>
+				</ul>
+			</td>
+			<td>
+				<ul>
+					<li>There were some examples in testing data on which model was not able to give correct prediction, adding data augmentation helps to modifies the training samples, which increse the performance of model while training</li>
+					<li>We can see it as the jump in training accuracy and also the model is able to predict the testing data better compare with last model.</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td class="tg-0pky"><a herf="https://github.com/vivek-a81/EVA6/blob/main/Session5/Model2_bn_dropout.ipynb">Model 4: Best Model with LR Schedulers</a></td>
+			<td class="tg-0pky">
+				<ul>
+					<li> Total Parameters : 7.4k </li>
+					<li> Training Acc : 99.24% </li>
+					<li> Training Loss : 0.00553 </li>
+					<li> Test Acc : 99.56% </li>
+					<li> Test Loss : 0.0168 </li>
+				</ul>
+			</td>
+			<td>
+				<ul>
+					<li>We tried different learning rate schedulers like ReduceLRPlatue which did not work because on platue decreses the learning rate when loss is incresing in a particular epochs but this did not happen in out problem. StepLR also did not work because it is hard to predict at which point the learning rate should be reduced</li>
+					<li>So, we have used OneCycleLR which updates learning rate throughout the epoch with every single batch is passed (Learning rate is updated in a particular range)</li>
+					<li>Now Lets Try image agumentation</li>
+				</ul>
+			</td>
+		</tr>
+	</tboby>
+</table>
 
 
 # Best Model Architecture
   
-![alt](Images/arch.png)
+<p align="center">
+    <img src="Images/arch.png" alt="centered image" />
+</p>
 
 ```
 ----------------------------------------------------------------
@@ -58,7 +154,11 @@ Trainable params: 7,496
 Non-trainable params: 0
 ----------------------------------------------------------------
 ```
-![](Images/rff.png)
+
+<p align="center">
+    <img src="Images/rff.png" alt="centered image" />
+</p>
+
 
 | OPERATION |	N<sub>in</sub> |	N<sub>out</sub> |	CH<sub>in</sub> |	CH<sub>out</sub> |	Padding	| Kernel |	Stride	| j<sub>in</sub> |	j<sub>out</sub>	| r<sub>in</sub> |	r<sub>out</sub> |
 | :-------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-------: |
@@ -77,7 +177,9 @@ Non-trainable params: 0
 Learning Curve
 ------------
 
-![alt](Images/loss.png)
+<p align="center">
+    <img src="Images/loss.png" alt="centered image" />
+</p>
 
 Logs
 -----------
@@ -178,5 +280,7 @@ Logs
 Evaluation of Final Model 
 -----------
 
-![](Images/prediction.png)
+<p align="center">
+    <img src="Images/prediction.png" alt="centered image" />
+</p>
 
