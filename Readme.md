@@ -5,34 +5,18 @@ There are various steps included while designing a neural network plus various r
 Model Comparision Table
 ----------------
 
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{border-color:black;font-family:Arial, sans-serif;font-size:13px; overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{border-color:black;font-family:Arial, sans-serif;font-size:14px; font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-baqh{text-align:center;vertical-align:top}
-.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
-.tg .tg-amwm{font-weight:bold;border-color:inherit;text-align:center;vertical-align:top}
-.tg .tg-qgz6{border-color:inherit;font-family:"Times New Roman", Times, serif !important;;text-align:left;vertical-align:top}
-.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
-.tg .tg-0lax{text-align:left;vertical-align:top}
-</style>
-<table class="tg">
-	<colgroup>
-		<col span="1" style="width: 18%;">
-		<col span="1" style="width: 20%;">
-		<col span="1" style="width: 62%;">
-	</colgroup>
+<table>
   <thead>
     <tr>
-			<th class="tg-amwm">Experiments</th>
-			<th class="tg-amwm">Model Stats</th>
-      <th class="tg-amwm">Analysis</th>
-		</tr>
+	<th align="center" width="20%"=>Experiments</th>
+	<th align="center" width="25%">Model Stats</th>
+	<th align="center" width="55%;">Analysis</th>
+    </tr>
 	</thead>
 	<tboby>
 		<tr>
-			<td class="tg-0pky"><a herf="https://github.com/vivek-a81/EVA6/blob/main/Session5/Model1_Basic_Skeleton.ipynb">Model 1: The Basic Skeleton</a></td>
-			<td class="tg-0pky">
+			<td><a herf="https://github.com/vivek-a81/EVA6/blob/main/Session5/Model1_Basic_Skeleton.ipynb">Model 1: The Basic Skeleton</a></td>
+			<td>
 				<ul>
 					<li> Total Parameters : 7.3k </li>
 					<li> Training Acc : 98.58% </li>
@@ -49,8 +33,8 @@ Model Comparision Table
 			</td>
 		</tr>
 		<tr>
-			<td class="tg-0pky"><a herf="https://github.com/vivek-a81/EVA6/blob/main/Session5/Model2_bn_dropout.ipynb">Model 2: Added BN & Dropout</a></td>
-			<td class="tg-0pky">
+			<td><a herf="https://github.com/vivek-a81/EVA6/blob/main/Session5/Model2_bn_dropout.ipynb">Model 2: Added BN & Dropout</a></td>
+			<td>
 				<ul>
 					<li> Total Parameters : 7.4k </li>
 					<li> Training Acc : 98.58% </li>
@@ -68,8 +52,8 @@ Model Comparision Table
 			</td>
 		</tr>
 		<tr>
-			<td class="tg-0pky"><a herf="https://github.com/vivek-a81/EVA6/blob/main/Session5/Model2_bn_dropout.ipynb">Model 3: With Data Augmentation</a></td>
-			<td class="tg-0pky">
+			<td><a herf="https://github.com/vivek-a81/EVA6/blob/main/Session5/Model2_bn_dropout.ipynb">Model 3: With Data Augmentation</a></td>
+			<td>
 				<ul>
 					<li> Total Parameters : 7.4k </li>
 					<li> Training Acc : 99.00% </li>
@@ -86,8 +70,8 @@ Model Comparision Table
 			</td>
 		</tr>
 		<tr>
-			<td class="tg-0pky"><a herf="https://github.com/vivek-a81/EVA6/blob/main/Session5/Model2_bn_dropout.ipynb">Model 4: Best Model with LR Schedulers</a></td>
-			<td class="tg-0pky">
+			<td><a herf="https://github.com/vivek-a81/EVA6/blob/main/Session5/Model2_bn_dropout.ipynb">Model 4: Best Model with LR Schedulers</a></td>
+			<td>
 				<ul>
 					<li> Total Parameters : 7.4k </li>
 					<li> Training Acc : 99.24% </li>
