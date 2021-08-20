@@ -13,9 +13,9 @@ Model Comparision Table
 	<th align="center" width="53%;">Analysis</th>
     </tr>
 	</thead>
-	<tboby>
+	<tbody>
 		<tr>
-			<td><a herf="https://github.com/vivek-a81/EVA6/blob/main/Session5/Model1_Basic_Skeleton.ipynb">Model 1: The Basic Skeleton</a></td>
+		    <td><a href="https://github.com/vivek-a81/EVA6/blob/main/Session5/Model2_bn_dropout.ipynb" target="_blank" rel="noopener noreferrer">Model 1: The Basic Skeleton</a></td>
 			<td>
 				<ul>
 					<li> Total Parameters : 7.3k </li>
@@ -33,7 +33,7 @@ Model Comparision Table
 			</td>
 		</tr>
 		<tr>
-			<td><a herf="https://github.com/vivek-a81/EVA6/blob/main/Session5/Model2_bn_dropout.ipynb">Model 2: Added BN & Dropout</a></td>
+		    <td><a href="https://github.com/vivek-a81/EVA6/blob/main/Session5/Model2_bn_dropout.ipynb">Model 2: Added BN & Dropout</a></td>
 			<td>
 				<ul>
 					<li> Total Parameters : 7.4k </li>
@@ -52,7 +52,7 @@ Model Comparision Table
 			</td>
 		</tr>
 		<tr>
-			<td><a herf="https://github.com/vivek-a81/EVA6/blob/main/Session5/Model2_bn_dropout.ipynb">Model 3: With Data Augmentation</a></td>
+			<td><a href="https://github.com/vivek-a81/EVA6/blob/main/Session5/Model2_bn_dropout.ipynb">Model 3: With Data Augmentation</a></td>
 			<td>
 				<ul>
 					<li> Total Parameters : 7.4k </li>
@@ -70,7 +70,7 @@ Model Comparision Table
 			</td>
 		</tr>
 		<tr>
-			<td><a herf="https://github.com/vivek-a81/EVA6/blob/main/Session5/Model2_bn_dropout.ipynb">Model 4: Best Model with LR Schedulers</a></td>
+			<td><a href="https://github.com/vivek-a81/EVA6/blob/main/Session5/Model2_bn_dropout.ipynb">Model 4: Best Model with LR Schedulers</a></td>
 			<td>
 				<ul>
 					<li> Total Parameters : 7.4k </li>
@@ -88,7 +88,7 @@ Model Comparision Table
 				</ul>
 			</td>
 		</tr>
-	</tboby>
+	</tbody>
 </table>
 
 
