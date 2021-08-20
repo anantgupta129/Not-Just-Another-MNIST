@@ -9,8 +9,8 @@ Model Comparision Table
   <thead>
     <tr>
 	<th align="center" width="20%"=>Experiments</th>
-	<th align="center" width="25%">Model Stats</th>
-	<th align="center" width="55%;">Analysis</th>
+	<th align="center" width="30%">Model Stats</th>
+	<th align="center" width="50%;">Analysis</th>
     </tr>
 	</thead>
 	<tboby>
