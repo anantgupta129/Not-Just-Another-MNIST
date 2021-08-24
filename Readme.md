@@ -1,6 +1,6 @@
-# How to Design A Convolutional Neural Network Step-By-Step Procedure Using MNIST Digit Recognizer
+# How to Design A Convolutional Neural Network Step-By-Step Procedure Using MNIST Digit Recognizer, PyTorch
 
-There are various steps included while designing a neural network plus various regularization techniques, i have seen people confused with what technique to use, where to use it and when. How many parameters should be there a network??.. Should you apply LR schedulers or where and when to add dropout and much more. The thing is all this depends on the dataset you dont go there and apply every thing in the toolkit at once. This repo contains step by step approach on **Design A Convolutional Neural Network using MNIST Digit Regognizer** dataset
+There are various steps included while designing a neural network plus various regularization techniques, i have seen people confused with what technique to use, where to use it and when. How many parameters should be there a network??.. Should you apply LR schedulers or where and when to add dropout and much more. The thing is all this depends on the dataset you dont go there and apply every thing in the toolkit at once. This repo contains step by step approach on *Design A Convolutional Neural Network using MNIST Digit Regognizer* dataset
 
 Model Comparision Table
 ----------------
@@ -8,9 +8,9 @@ Model Comparision Table
 <table>
   <thead>
     <tr>
-	<th align="center" width="20%"=>Experiments</th>
-	<th align="center" width="27%">Model Stats</th>
-	<th align="center" width="53%;">Analysis</th>
+      <th align="center" width="20%"=>Experiments</th>
+      <th align="center" width="27%">Model Stats</th>
+      <th align="center" width="53%;">Analysis</th>
     </tr>
 	</thead>
 	<tbody>
@@ -92,6 +92,8 @@ Model Comparision Table
 </table>
 
 
+Check out [here](https://paperswithcode.com/sota/image-classification-on-mnist), here the *MNIST State of the Art* results the top model *Branching/Merging CNN + Homogeneous Vector Capsules* was able to achive 99.87% accuracy with 1,514,187 Trainable Parameters and we are at  9956% with just 7400 parameters. NOTE: i didnt mean to compare nor stating that it is better just stating the importance of parameters while creting a network, it may be obvious that for more accuracy more parameters may be required.
+
 # Best Model Architecture
   
 <p align="center">
@@ -138,6 +140,9 @@ Trainable params: 7,496
 Non-trainable params: 0
 ----------------------------------------------------------------
 ```
+
+Model Parameters Calculation
+------------------
 
 <p align="center">
     <img src="Images/rff.png" alt="centered image" />
