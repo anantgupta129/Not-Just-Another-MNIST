@@ -1,7 +1,7 @@
 # How to Design A Convolutional Neural Network Step-By-Step Procedure Using MNIST Digit Recognizer, PyTorch
 
-- [How to Design A Convolutional Neural Network Step-By-Step Procedure Using MNIST Digit Recognizer, PyTorch](#how-to-design-a-convolutional-neural-network-step-by-step-procedure-using-mnist-digit-recognizer-pytorch)
-  - [Model Comparision Table](#model-comparision-table)
+
+- [Model Comparision Table](#model-comparision-table)
 - [Best Model Architecture](#best-model-architecture)
   - [Model Parameters Calculation](#model-parameters-calculation)
   - [Learning Curve](#learning-curve)
