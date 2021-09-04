@@ -100,7 +100,7 @@ Model Comparision Table
 </table>
 
 
-Check out [here](https://paperswithcode.com/sota/image-classification-on-mnist), here the *MNIST State of the Art* results the top model *Branching/Merging CNN + Homogeneous Vector Capsules* was able to achive 99.87% accuracy with 1,514,187 Trainable Parameters and we are at  9956% with just 7400 parameters. NOTE: i didnt mean to compare nor stating that it is better just stating the importance of parameters while creting a network, it may be obvious that for more accuracy more parameters may be required.
+Check out [here](https://paperswithcode.com/sota/image-classification-on-mnist), here the *MNIST State of the Art* results the top model *Branching/Merging CNN + Homogeneous Vector Capsules* was able to achive 99.87% accuracy with 1,514,187 Trainable Parameters and we are at  99.56% with just 7400 parameters. NOTE: i didnt mean to compare nor stating that it is better just stating the importance of parameters while creting a network, it may be obvious that for more accuracy more parameters may be required.
 
 # Best Model Architecture
   
