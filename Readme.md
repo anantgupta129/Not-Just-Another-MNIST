@@ -4,14 +4,14 @@
 
 <div class="row">
   <div class="column">
-    <img src="./images/Augmentation.jpg" width="350" class="center">
-    <img src="./images/Setup.jpg" width="350" class="center">
-    <img src="./images/MaxPooling-1.png" width="350" class="center">
+    <img src="./image/Augmentation.jpg" width="350" class="center">
+    <img src="./image/Setup.jpg" width="350" class="center">
+    <img src="./image/MaxPooling-1.png" width="350" class="center">
   </div>
   <div class="column">
-    <img src="./images/CAPACITY.jpg" width="350" class="center">
-    <img src="./images/Skeleton.jpg" width="350" class="center">
-    <img src="./images/stopplayinggod.jpg" width="350" class="center">
+    <img src="./image/CAPACITY.jpg" width="350" class="center">
+    <img src="./image/Skeleton.jpg" width="350" class="center">
+    <img src="./image/stopplayinggod.jpg" width="350" class="center">
   </div>
 </div>
 
@@ -97,7 +97,7 @@ Check out [here](https://paperswithcode.com/sota/image-classification-on-mnist),
 # Best Model Architecture
   
 <p align="center">
-    <img src="Images/arch.png" alt="centered image" />
+    <img src="image/arch.png" alt="centered image" />
 </p>
 
 ```
@@ -145,7 +145,7 @@ Model Parameters Calculation
 ------------------
 
 <p align="center">
-    <img src="Images/rff.png" alt="centered image" />
+    <img src="image/rff.png" alt="centered image" />
 </p>
 
 
@@ -167,7 +167,7 @@ Learning Curve
 ------------
 
 <p align="center">
-    <img src="Images/loss.png" alt="centered image" />
+    <img src="image/loss.png" alt="centered image" />
 </p>
 
 Logs
@@ -240,6 +240,6 @@ Evaluation of Final Model
 -----------
 
 <p align="center">
-    <img src="Images/prediction.png" alt="centered image" />
+    <img src="image/prediction.png" alt="centered image" />
 </p>
 
