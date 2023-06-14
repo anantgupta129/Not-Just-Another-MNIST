@@ -1,16 +1,31 @@
-# How to Design A Convolutional Neural Network Step-By-Step Procedure Using MNIST Digit Recognizer, PyTorch
+# Step-By-Step Guide to Design A Convolutional Neural Network, PyTorch
+
+<br>
+
+<div class="row">
+  <div class="column">
+    <img src="./images/Augmentation.jpg" width="350" class="center">
+    <img src="./images/Setup.jpg" width="350" class="center">
+    <img src="./images/MaxPooling-1.png" width="350" class="center">
+  </div>
+  <div class="column">
+    <img src="./images/CAPACITY.jpg" width="350" class="center">
+    <img src="./images/Skeleton.jpg" width="350" class="center">
+    <img src="./images/stopplayinggod.jpg" width="350" class="center">
+  </div>
+</div>
 
 
-- [Model Comparision Table](#model-comparision-table)
-- [Best Model Architecture](#best-model-architecture)
-  - [Model Parameters Calculation](#model-parameters-calculation)
-  - [Learning Curve](#learning-curve)
-  - [Logs](#logs)
-  - [Evaluation of Final Model](#evaluation-of-final-model)
+<br>
 
-There are various steps included while designing a neural network plus various regularization techniques, i have seen people confused with what technique to use, where to use it and when. How many parameters should be there a network??.. Should you apply LR schedulers or where and when to add dropout and much more. The thing is all this depends on the dataset you dont go there and apply every thing in the toolkit at once. This repo contains step by step approach on *Design A Convolutional Neural Network using MNIST Digit Regognizer* dataset
+Designing a neural network can be a complex task. There are various steps included while designing a neural network plus various regularization techniques, and it can be 
+confusing to know what technique to use, where to use it and when. The number of parameters in a network depends on the dataset you are using. **Here is step-by-step approach on how to design a Convolutional Neural Network using MNIST Digit Recognizer dataset**
 
-Model Comparision Table
+### Target **99.4%** Accurate on test dataset with less then **8,000** parameters
+
+<br>
+
+Experiment Table
 ----------------
 
 <table>
@@ -23,76 +38,53 @@ Model Comparision Table
 	</thead>
 	<tbody>
 		<tr>
-		    <td><a href="/Model1_Basic_Skeleton.ipynb" target="_blank" rel="noopener noreferrer">Model 1: The Basic Skeleton</a></td>
+		    <td><a href="./s7_1.ipynb" target="_blank" rel="noopener noreferrer">1: The Basic Skeleton</a></td>
 			<td>
 				<ul>
-					<li> Total Parameters : 7.3k </li>
-					<li> Training Acc : 98.58% </li>
-					<li> Training Loss : 0.01337 </li>
-					<li> Test Acc : 98.66% </li>
-					<li> Test Loss : 0.0464 </li>
+					<li> Total Parameters : 5.3k </li>
+					<li> Training Acc : 98.56% </li>
+					<li> Test Acc : 98.82% </li>
 				</ul>
 			</td>
 			<td>
 				<ul>
 					<li>Designed model architeture of less than 8000 parameters The accuracy was very well with such less number of parameters</li>
-					<li>The training accuracy batch normalization and dropout can push the performance</li>
+					<li>Batch normalization maintained the mean and standard-deviation of activation values of layers.</li>
+					<li>The best training accuracy shows the space for future training, This can be done by adding the other regulaization techniques</li>
 				</ul>
 			</td>
 		</tr>
 		<tr>
-		    <td><a href="/Model2_bn_dropout.ipynb">Model 2: Added BN & Dropout</a></td>
+			<td><a href="./s7_2.ipynb">2: With Data Augmentation</a></td>
 			<td>
 				<ul>
 					<li> Total Parameters : 7.4k </li>
-					<li> Training Acc : 98.58% </li>
-					<li> Training Loss : 0.01337 </li>
-					<li> Test Acc : 99.28% </li>
-					<li> Test Loss : 0.0230 </li>
+					<li> Training Acc : 99.01% </li>
+					<li> Test Acc : 99.43% </li>
 				</ul>
 			</td>
 			<td>
 				<ul>
-					<li>The model is pushed future by applying the batchnormalization.</li>
-					<li>Dropout made the training harder by dropping the neurons, by this we can see results in testing accuracy</li>
-					<li>Now Lets lets try to reduce the gap between training and test accuracy by adding image agumentation</li>
-				</ul>
-			</td>
-		</tr>
-		<tr>
-			<td><a href="/Model3_augmentation.ipynb">Model 3: With Data Augmentation</a></td>
-			<td>
-				<ul>
-					<li> Total Parameters : 7.4k </li>
-					<li> Training Acc : 99.00% </li>
-					<li> Training Loss : 0.01188 </li>
-					<li> Test Acc : 99.34% </li>
-					<li> Test Loss : 0.0213 </li>
-				</ul>
-			</td>
-			<td>
-				<ul>
+					<li>It Works !! but we can see 99.4 training acc in final epoch only lets push this further</li>
 					<li>There were some examples in testing data on which model was not able to give correct prediction, adding data augmentation helps to modifies the training samples, which increse the performance of model while training</li>
 					<li>We can see it as the jump in training accuracy and also the model is able to predict the testing data better compare with last model.</li>
 				</ul>
 			</td>
 		</tr>
 		<tr>
-			<td><a href="/Model4_best_modelLR.ipynb">Model 4: Best Model with LR Schedulers</a></td>
+			<td><a href="./s7_3.ipynb">3: Best Model with LR Schedulers</a></td>
 			<td>
 				<ul>
 					<li> Total Parameters : 7.4k </li>
-					<li> Training Acc : 99.24% </li>
-					<li> Training Loss : 0.00553 </li>
-					<li> Test Acc : 99.56% </li>
-					<li> Test Loss : 0.0168 </li>
+					<li> Training Acc : 99.42% </li>
+					<li> Test Acc : 99.53% </li>
 				</ul>
 			</td>
 			<td>
 				<ul>
-					<li>We tried different learning rate schedulers like ReduceLRPlatue which did not work because on platue decreses the learning rate when loss is incresing in a particular epochs but this did not happen in out problem. StepLR also did not work because it is hard to predict at which point the learning rate should be reduced</li>
-					<li>So, we have used OneCycleLR which updates learning rate throughout the epoch with every single batch is passed (Learning rate is updated in a particular range)</li>
-					<li>Now Lets Try image agumentation</li>
+					<li>I tried different learning rate schedulers like ReduceLRPlatue which did not work because on platue decreses the learning rate when loss is incresing in a particular epochs but this did not happen in out problem. StepLR also did not work because it is hard to predict at which point the learning rate should be reduced.</li>
+					<li>So, i have used OneCycleLR which updates learning rate throughout the epoch with every single batch is passed (Learning rate is updated in a particular range)</li>
+					<li>accuracy of more than 99.4 in last five epochs (Form 11 to 15)</li>
 				</ul>
 			</td>
 		</tr>
@@ -100,7 +92,7 @@ Model Comparision Table
 </table>
 
 
-Check out [here](https://paperswithcode.com/sota/image-classification-on-mnist), here the *MNIST State of the Art* results the top model *Branching/Merging CNN + Homogeneous Vector Capsules* was able to achive 99.87% accuracy with 1,514,187 Trainable Parameters and we are at  99.56% with just 7400 parameters. NOTE: i didnt mean to compare nor stating that it is better just stating the importance of parameters while creting a network, it may be obvious that for more accuracy more parameters may be required.
+Check out [here](https://paperswithcode.com/sota/image-classification-on-mnist), here the *MNIST State of the Art* results the top model *Branching/Merging CNN + Homogeneous Vector Capsules* was able to achive 99.87% accuracy with 1,514,187 Trainable Parameters and we are at  99.53% with just 7.4k parameters. NOTE: i didnt mean to compare nor stating that it is better just stating the importance of parameters while creting a network, it may be obvious that for more accuracy more parameters may be required.
 
 # Best Model Architecture
   
@@ -182,95 +174,65 @@ Logs
 -----------
 
 ```
-  0%|          | 0/469 [00:00<?, ?it/s]
-  EPOCH: 1
-  Batch_id=468 Loss=0.27802 Accuracy=70.19: 100%|██████████| 469/469 [00:36<00:00, 12.89it/s]
-    0%|          | 0/469 [00:00<?, ?it/s]
+  Epoch 1
+Train: Loss=0.1293 Batch_id=468 Accuracy=80.89: 100%|██████████| 469/469 [00:37<00:00, 12.36it/s]
+Test set: Average loss: 0.1201, Accuracy: 9727/10000 (97.27%)
 
-  Test set: Average loss: 0.2105, Accuracy: 9654/10000 (96.54%)
+Epoch 2
+Train: Loss=0.0514 Batch_id=468 Accuracy=96.77: 100%|██████████| 469/469 [00:38<00:00, 12.26it/s]
+Test set: Average loss: 0.0631, Accuracy: 9819/10000 (98.19%)
 
-  EPOCH: 2
-  Batch_id=468 Loss=0.09033 Accuracy=96.38: 100%|██████████| 469/469 [00:37<00:00, 12.68it/s]
-    0%|          | 0/469 [00:00<?, ?it/s]
+Epoch 3
+Train: Loss=0.0652 Batch_id=468 Accuracy=97.82: 100%|██████████| 469/469 [00:38<00:00, 12.28it/s]
+Test set: Average loss: 0.0387, Accuracy: 9885/10000 (98.85%)
 
-  Test set: Average loss: 0.0912, Accuracy: 9739/10000 (97.39%)
+Epoch 4
+Train: Loss=0.0647 Batch_id=468 Accuracy=98.18: 100%|██████████| 469/469 [00:37<00:00, 12.47it/s]
+Test set: Average loss: 0.0311, Accuracy: 9897/10000 (98.97%)
 
-  EPOCH: 3
-  Batch_id=468 Loss=0.03847 Accuracy=97.50: 100%|██████████| 469/469 [00:36<00:00, 12.68it/s]
-    0%|          | 0/469 [00:00<?, ?it/s]
+Epoch 5
+Train: Loss=0.0878 Batch_id=468 Accuracy=98.49: 100%|██████████| 469/469 [00:39<00:00, 11.92it/s]
+Test set: Average loss: 0.0331, Accuracy: 9905/10000 (99.05%)
 
-  Test set: Average loss: 0.0425, Accuracy: 9879/10000 (98.79%)
+Epoch 6
+Train: Loss=0.0864 Batch_id=468 Accuracy=98.66: 100%|██████████| 469/469 [00:38<00:00, 12.21it/s]
+Test set: Average loss: 0.0274, Accuracy: 9921/10000 (99.21%)
 
-  EPOCH: 4
-  Batch_id=468 Loss=0.02709 Accuracy=98.01: 100%|██████████| 469/469 [00:36<00:00, 12.72it/s]
-    0%|          | 0/469 [00:00<?, ?it/s]
+Epoch 7
+Train: Loss=0.0709 Batch_id=468 Accuracy=98.81: 100%|██████████| 469/469 [00:38<00:00, 12.18it/s]
+Test set: Average loss: 0.0256, Accuracy: 9926/10000 (99.26%)
 
-  Test set: Average loss: 0.0345, Accuracy: 9896/10000 (98.96%)
+Epoch 8
+Train: Loss=0.0346 Batch_id=468 Accuracy=98.85: 100%|██████████| 469/469 [00:38<00:00, 12.30it/s]
+Test set: Average loss: 0.0252, Accuracy: 9922/10000 (99.22%)
 
-  EPOCH: 5
-  Batch_id=468 Loss=0.03753 Accuracy=98.19: 100%|██████████| 469/469 [00:37<00:00, 12.50it/s]
-    0%|          | 0/469 [00:00<?, ?it/s]
+Epoch 9
+Train: Loss=0.0301 Batch_id=468 Accuracy=99.00: 100%|██████████| 469/469 [00:38<00:00, 12.24it/s]
+Test set: Average loss: 0.0237, Accuracy: 9923/10000 (99.23%)
 
-  Test set: Average loss: 0.0523, Accuracy: 9840/10000 (98.40%)
+Epoch 10
+Train: Loss=0.1060 Batch_id=468 Accuracy=99.06: 100%|██████████| 469/469 [00:38<00:00, 12.33it/s]
+Test set: Average loss: 0.0220, Accuracy: 9934/10000 (99.34%)
 
-  EPOCH: 6
-  Batch_id=468 Loss=0.04695 Accuracy=98.43: 100%|██████████| 469/469 [00:37<00:00, 12.44it/s]
-    0%|          | 0/469 [00:00<?, ?it/s]
+Epoch 11
+Train: Loss=0.0260 Batch_id=468 Accuracy=99.14: 100%|██████████| 469/469 [00:38<00:00, 12.29it/s]
+Test set: Average loss: 0.0206, Accuracy: 9947/10000 (99.47%)
 
-  Test set: Average loss: 0.0282, Accuracy: 9911/10000 (99.11%)
+Epoch 12
+Train: Loss=0.0091 Batch_id=468 Accuracy=99.22: 100%|██████████| 469/469 [00:39<00:00, 11.82it/s]
+Test set: Average loss: 0.0175, Accuracy: 9950/10000 (99.50%)
 
-  EPOCH: 7
-  Batch_id=468 Loss=0.01910 Accuracy=98.56: 100%|██████████| 469/469 [00:36<00:00, 12.71it/s]
-    0%|          | 0/469 [00:00<?, ?it/s]
+Epoch 13
+Train: Loss=0.0203 Batch_id=468 Accuracy=99.37: 100%|██████████| 469/469 [00:38<00:00, 12.28it/s]
+Test set: Average loss: 0.0183, Accuracy: 9948/10000 (99.48%)
 
-  Test set: Average loss: 0.0262, Accuracy: 9912/10000 (99.12%)
+Epoch 14
+Train: Loss=0.0071 Batch_id=468 Accuracy=99.39: 100%|██████████| 469/469 [00:38<00:00, 12.24it/s]
+Test set: Average loss: 0.0171, Accuracy: 9952/10000 (99.52%)
 
-  EPOCH: 8
-  Batch_id=468 Loss=0.00553 Accuracy=98.66: 100%|██████████| 469/469 [00:37<00:00, 12.65it/s]
-    0%|          | 0/469 [00:00<?, ?it/s]
-
-  Test set: Average loss: 0.0280, Accuracy: 9901/10000 (99.01%)
-
-  EPOCH: 9
-  Batch_id=468 Loss=0.02969 Accuracy=98.75: 100%|██████████| 469/469 [00:36<00:00, 12.71it/s]
-    0%|          | 0/469 [00:00<?, ?it/s]
-
-  Test set: Average loss: 0.0238, Accuracy: 9925/10000 (99.25%)
-
-  EPOCH: 10
-  Batch_id=468 Loss=0.01127 Accuracy=98.89: 100%|██████████| 469/469 [00:37<00:00, 12.63it/s]
-    0%|          | 0/469 [00:00<?, ?it/s]
-
-  Test set: Average loss: 0.0214, Accuracy: 9936/10000 (99.36%)
-
-  EPOCH: 11
-  Batch_id=468 Loss=0.03408 Accuracy=98.95: 100%|██████████| 469/469 [00:37<00:00, 12.58it/s]
-    0%|          | 0/469 [00:00<?, ?it/s]
-
-  Test set: Average loss: 0.0199, Accuracy: 9944/10000 (99.44%)
-
-  EPOCH: 12
-  Batch_id=468 Loss=0.00629 Accuracy=99.00: 100%|██████████| 469/469 [00:37<00:00, 12.53it/s]
-    0%|          | 0/469 [00:00<?, ?it/s]
-
-  Test set: Average loss: 0.0172, Accuracy: 9945/10000 (99.45%)
-
-  EPOCH: 13
-  Batch_id=468 Loss=0.02111 Accuracy=99.11: 100%|██████████| 469/469 [00:37<00:00, 12.51it/s]
-    0%|          | 0/469 [00:00<?, ?it/s]
-
-  Test set: Average loss: 0.0176, Accuracy: 9948/10000 (99.48%)
-
-  EPOCH: 14
-  Batch_id=468 Loss=0.02686 Accuracy=99.18: 100%|██████████| 469/469 [00:37<00:00, 12.51it/s]
-    0%|          | 0/469 [00:00<?, ?it/s]
-
-  Test set: Average loss: 0.0171, Accuracy: 9949/10000 (99.49%)
-
-  EPOCH: 15
-  Batch_id=468 Loss=0.02282 Accuracy=99.24: 100%|██████████| 469/469 [00:37<00:00, 12.47it/s]
-
-  Test set: Average loss: 0.0168, Accuracy: 9956/10000 (99.56%)
+Epoch 15
+Train: Loss=0.0211 Batch_id=468 Accuracy=99.42: 100%|██████████| 469/469 [00:38<00:00, 12.22it/s]
+Test set: Average loss: 0.0174, Accuracy: 9953/10000 (99.53%)
 
 ```
 
