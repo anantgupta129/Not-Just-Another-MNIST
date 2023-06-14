@@ -4,14 +4,14 @@
 
 <div class="row">
   <div class="column">
-    <img src="./image/Augmentation.jpg" width="350" class="center">
-    <img src="./image/Setup.jpg" width="350" class="center">
-    <img src="./image/MaxPooling-1.png" width="350" class="center">
+    <img src="./image/Augmentation.jpg" width="250" class="center">
+    <img src="./image/Setup.jpg" width="250" class="center">
+    <img src="./image/MaxPooling-1.png" width="250" class="center">
   </div>
   <div class="column">
-    <img src="./image/CAPACITY.jpg" width="350" class="center">
-    <img src="./image/Skeleton.jpg" width="350" class="center">
-    <img src="./image/stopplayinggod.jpg" width="350" class="center">
+    <img src="./image/CAPACITY.jpg" width="250" class="center">
+    <img src="./image/Skeleton.jpg" width="250" class="center">
+    <img src="./image/stopplayinggod.jpg" width="250" class="center">
   </div>
 </div>
 
