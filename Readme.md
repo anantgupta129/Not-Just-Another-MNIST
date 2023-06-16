@@ -38,7 +38,7 @@ Experiment Table
 	</thead>
 	<tbody>
 		<tr>
-		    <td><a href="./s7_1.ipynb" target="_blank" rel="noopener noreferrer">1: The Basic Skeleton</a></td>
+		    <td><a href="./notebooks/s7_1.ipynb" target="_blank" rel="noopener noreferrer">1: The Basic Skeleton</a></td>
 			<td>
 				<ul>
 					<li> Total Parameters : 5.3k </li>
@@ -55,7 +55,7 @@ Experiment Table
 			</td>
 		</tr>
 		<tr>
-			<td><a href="./s7_2.ipynb">2: With Data Augmentation</a></td>
+			<td><a href="./notebooks/s7_2.ipynb">2: With Data Augmentation</a></td>
 			<td>
 				<ul>
 					<li> Total Parameters : 7.4k </li>
@@ -72,7 +72,7 @@ Experiment Table
 			</td>
 		</tr>
 		<tr>
-			<td><a href="./s7_3.ipynb">3: Best Model with LR Schedulers</a></td>
+			<td><a href="./notebooks/s7_3.ipynb">3: Best Model with LR Schedulers</a></td>
 			<td>
 				<ul>
 					<li> Total Parameters : 7.4k </li>
